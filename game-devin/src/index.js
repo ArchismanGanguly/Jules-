@@ -1,17 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+
     const fileList = document.getElementById('file-list');
-    const codeEditor = document.getElementById('code-editor');
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
     const exportButton = document.querySelector('.sidebar ul li:nth-child(4)');
 
-    const accountType = 'free'; // or 'premium'
-
-    if (accountType === 'free') {
+    if (user.accountType === 'free') {
         exportButton.style.display = 'none';
     } else {
         exportButton.addEventListener('click', () => {
             console.log('Exporting to GitHub...');
-            // In a real application, this would use the GitHub API
-            // to create a repository and push the files.
         });
 
         const premiumFeatures = document.querySelectorAll('.premium-feature');
@@ -58,8 +62,10 @@ class Enemy {
         const li = document.createElement('li');
         li.textContent = fileName;
         li.addEventListener('click', () => {
-            codeEditor.textContent = files[fileName];
+            editor.setValue(files[fileName], 1);
         });
         fileList.appendChild(li);
     }
+
+    editor.setValue(files['game.js'], 1);
 });

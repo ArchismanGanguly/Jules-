@@ -24,7 +24,7 @@
                 <h2>My Awesome Game</h2>
                 <div>
                     <button>Free Account</button>
-                    <button class="upgrade-button">Upgrade to Premium</button>
+                    <a href="checkout.html" class="upgrade-button">Upgrade to Premium</a>
                 </div>
             </div>
             <div class="toolbar">
@@ -40,18 +40,10 @@
                     <li>enemy.js</li>
                 </ul>
             </div>
-            <div class="editor">
-                <pre><code id="code-editor">
-// game.js
-function main() {
-    console.log("Game started!");
-}
-
-main();
-                </code></pre>
-            </div>
+            <div class="editor" id="editor"></div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
     <script src="../src/index.js"></script>
 </body>
 </html>
