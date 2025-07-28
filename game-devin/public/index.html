@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameDevin</title>
+    <link rel="stylesheet" href="../src/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>GameDevin</h3>
+            <ul>
+                <li>New Project</li>
+                <li>Open Project</li>
+                <li>Save Project</li>
+                <li>Export</li>
+                <li class="premium-feature">Report a Bug</li>
+                <li class="premium-feature">Suggest a Feature</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h2>My Awesome Game</h2>
+                <div>
+                    <button>Free Account</button>
+                    <button class="upgrade-button">Upgrade to Premium</button>
+                </div>
+            </div>
+            <div class="toolbar">
+                <button>Run</button>
+                <button>Debug</button>
+                <button>Assets</button>
+            </div>
+            <div class="file-explorer">
+                <h4>File Explorer</h4>
+                <ul id="file-list">
+                    <li>game.js</li>
+                    <li>player.js</li>
+                    <li>enemy.js</li>
+                </ul>
+            </div>
+            <div class="editor">
+                <pre><code id="code-editor">
+// game.js
+function main() {
+    console.log("Game started!");
+}
+
+main();
+                </code></pre>
+            </div>
+        </div>
+    </div>
+    <script src="../src/index.js"></script>
+</body>
+</html>
